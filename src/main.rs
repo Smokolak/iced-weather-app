@@ -162,6 +162,7 @@ fn input_field(_placeholder: &str, _value: &str) -> TextInput<'static, Message> 
         .line_height(text::LineHeight::Relative(1.75))
 }
 
+// page to provide api key from openweather
 fn api_page(api_info: &ApiInfo) -> Container<Message> {
     let column = Column::new()
         .push(text("OpenWeather API Key").size(24))
@@ -181,6 +182,7 @@ fn api_page(api_info: &ApiInfo) -> Container<Message> {
         .padding(Padding::from(20))
         .style(iced::theme::Container::Custom(Box::new(ContainerStyle)))
 }
+// provide city, country code page
 fn location_page(location_info: &LocationInfo) -> Container<Message> {
     let column = Column::new()
         .push(text("Check weather by City name and Country code")
@@ -211,6 +213,7 @@ fn location_page(location_info: &LocationInfo) -> Container<Message> {
         .style(iced::theme::Container::Custom(Box::new(ContainerStyle)))
 }
 
+// weather results page
 fn weather_page(weather_results: &WeatherResults) -> Container<Message> {
     let column = Column::new()
         .push(text(format!("{}", weather_results.weather))
@@ -227,6 +230,7 @@ fn weather_page(weather_results: &WeatherResults) -> Container<Message> {
         .style(iced::theme::Container::Custom(Box::new(ContainerStyle)))
 }
 
+// footer page
 fn footer_page(butt: Button<Message>) -> Container<Message> {
     let footer = Row::new()
         .push(
